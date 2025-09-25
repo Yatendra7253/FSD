@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <div class="expense-form">
+            <h2>Add New Expense</h2>
+            <form id="expenseForm">
+                <div class="form-group">
+                    <label for="expenseName">Expense Name</label>
+                    <input type="text" id="expenseName" placeholder="Enter expense name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount (₹)</label>
+                    <input type="number" id="amount" placeholder="0.00" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="Enter description">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <button type="submit" class="add-btn">Add Expense</button>
+            </form>
+        </div>
+
+        <div class="total-amount">
+            <h3>Total: ₹<span id="totalAmount">0.00</span></h3>
+        </div>
+
+        <div class="expenses-table">
+            <table id="expensesTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expensesList"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="first.js"></script>
+</body>
+</html>
+
+
