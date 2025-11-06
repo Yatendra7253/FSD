@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif; margin: 20px;}
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .taskInput {
+            background-color: red;
+        }
+        li 
+            margin: 5px 0;
+        }
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> MY TO-DO List</h1>
+    <input type = "text" id = "taskInput" placeholder = "enter a task" class="taskInput">
+    <button id = "addBtn" class="addBtn"> add task</button>
+   <ul id = "taskList" class="taskList"></ul>
+   <script>
+    const taskInput = document.getElementById("taskInput");
+    const addBtn = document.getElementById("addBtn");
+    const taskList = document.getElementById("taskList");
+
+    addBtn.addEventListener("click",addTask);
+
+    function addTask(){
+        const taskTest = taskInput.value.trim();
+
+
+        if (taskTest === "" ){
+            alert("please enter a task!");
+            return;
+
+        }
+
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.textcontent = taskTest;
+
+
+        const tickBtn = document.createElement("button");
+        tickBtn.textcontent = "";
+        tickBtn.className = "tickBtn";
+        tickBtn.addEventlistener("click", function(){
+            span.classlist.toggle("done");
+        });
+
+        const delBtn = document.createElement("button");
+        delBtn.textcontent = "delete";
+        delBtn.className = "delBtn";
+        delBtn.addEventlistener("click",function(){
+        taskList.removeChild(li);
+        });
+            
+        
+    
+   
+
+    li.appendChild(span);
+     li.appendChild(tickBtn);
+      li.appendChild(delBtn);
+      taskList.appendChild(li);
+
+
+      taskInput.value = "";
+    }
+   </script>
+</body>
+</html>
